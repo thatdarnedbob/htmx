@@ -4,6 +4,7 @@ from infrastructure.view_modifiers import response
 from viewmodels.videos.category_viewmodel import CategoryViewModel
 from viewmodels.videos.play_viewmodel import PlayViewModel
 from viewmodels.videos.add_video_viewmodel import AddVideoViewModel
+from viewmodels.videos.search_viewmodel import SearchViewModel
 
 from services.video_service import add_video
 
@@ -42,4 +43,10 @@ def add_post(cat_name: str):
 @response(template_file="videos/partials/show_add_form.html")
 def cancel_add(cat_name: str):
     vm = AddVideoViewModel(cat_name)
+    return vm.to_dict()
+
+@blueprint.get('/videos/search')
+@response(template_file='/videos/search.html')
+def search():
+    vm = SearchViewModel()
     return vm.to_dict()
