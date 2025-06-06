@@ -38,6 +38,19 @@
 
             </div>
         {% endfor %}
+
+    </div>
+
+     <div class="container add-video category">
+        <div class="row click-to-add">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                {{ render_partial('videos/partials/show_add_form.html', cat_name = category.category )}}
+                
+            </div>
+            <div class="col-md-4"></div>
+        </div>
     </div>
 
 

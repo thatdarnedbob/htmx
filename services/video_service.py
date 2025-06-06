@@ -8,7 +8,6 @@ from models.video_model import Video
 __categories: Dict['str', Category] = {}
 __all_videos_list: List[Video] = []
 
-
 def load_data():
     global __all_videos_list, __categories
 
